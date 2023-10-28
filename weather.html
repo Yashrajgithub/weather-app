@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 0 auto;
+            max-width: 400px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        <form>
+            <label for="location">Enter Location:</label>
+            <input type="text" id="location" name="location" placeholder="City, Country">
+            <button type="button" onclick="getWeather()">Get Weather</button>
+        </form>
+        <div id="weather-info">
+            <!-- Weather information will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Add your JavaScript code to fetch and display weather data here
+        function getWeather() {
+            // You would use an API to fetch real-time weather data and update the #weather-info div
+            // You can use libraries like fetch or jQuery.ajax to make the API request
+            // Parse the API response and display the weather information
+            // Replace the dummy data below with actual weather data
+            const weatherData = {
+                temperature: '25°C',
+                condition: 'Partly Cloudy',
+                location: 'City, Country',
+            };
+
+            const weatherInfo = document.getElementById('weather-info');
+            weatherInfo.innerHTML = `
+                <h2>Weather in ${weatherData.location}</h2>
+                <p>Temperature: ${weatherData.temperature}</p>
+                <p>Condition: ${weatherData.condition}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
